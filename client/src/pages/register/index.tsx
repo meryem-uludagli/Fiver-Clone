@@ -12,16 +12,12 @@ const Register = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // bir formdata örneği oluştur
     const formData = new FormData(e.target as HTMLFormElement);
 
-    // bütün inputlardaki verileri nesne haline getir
     const newUser = Object.fromEntries(formData.entries());
 
-    // satıcı hesabı bilgisini nesne içerisine kaydet
     (newUser as unknown as IFormUser).isSeller = isSeller;
 
-    // api'a kaydolma isteği at
     register(newUser as unknown as IFormUser);
   };
 

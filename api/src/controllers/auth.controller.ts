@@ -6,7 +6,6 @@ import error from "../utils/error.ts";
 import catchAsync from "../utils/catchAsync.ts";
 import upload from "../utils/cloudinary.ts";
 
-// ------ Kaydol -------- Yeni Hesap Oluştur -------------
 export const register = catchAsync(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const hashedPass: string = bcrypt.hashSync(req.body.password, 12);
@@ -28,7 +27,6 @@ export const register = catchAsync(
   }
 );
 
-// ------ Giriş Yap ---- Mevcut Hesaba Giriş -------------
 export const login = catchAsync(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const user: IUser | null = await User.findOne({
@@ -62,7 +60,6 @@ export const login = catchAsync(
   }
 );
 
-// ------ Çıkış Yap ---- Oturumu Kapat -------------
 export const logout = catchAsync(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     res
@@ -72,7 +69,6 @@ export const logout = catchAsync(
   }
 );
 
-// ------ Profil Bilgilerini Al -----------------
 export const profile = catchAsync(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const user = await User.findById(req.userId);
