@@ -3,9 +3,9 @@ import { NextFunction } from "express";
 import error from "./error.ts";
 
 cloudinary.config({
-  cloud_name: "dyhllifb3",
-  api_key: "561321163482122",
-  api_secret: "ObBTwvnkULlvw6Q2DGzUelrpkAU",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const upload = async (
