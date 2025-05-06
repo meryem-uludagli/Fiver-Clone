@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { IGig } from "../../types";
 import { FaStar } from "react-icons/fa";
-import Rating from "../rating";
 import Buttons from "./buttons";
+import Rating from "../rating";
 
 type Props = {
   item: IGig;

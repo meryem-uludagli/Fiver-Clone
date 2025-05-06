@@ -7,8 +7,8 @@ import Footer from "./components/footer";
 import Search from "./pages/search/index";
 import Create from "./pages/create";
 import Detail from "./pages/detail";
-import MyGigs from "./pages/my-gigs";
 import Protected from "./components/protected";
+import MyGigs from "./pages/my-gigs";
 
 const App = () => {
   return (
